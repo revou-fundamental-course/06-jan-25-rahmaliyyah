@@ -1,64 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
-
+/* General Styling */
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-header {
-    background-color: #121212;
-    padding: 0 10%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
+/* Navbar Styling */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-    width: 40px;
-    margin-right: 8px;
+  width: 150px;
 }
 
-.logo span {
-    font-size: 24px;
-    font-weight: 600;
-    color: #9C27B0;
+.nav-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
-.nav-links a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #4A148C;
-    transition: color 0.3s ease;
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: #9C27B0;
+.nav-links li a:hover {
+  color: #8a2be2;
 }
 
+/* Social Media Icons */
 .social-icons {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.social-icons a img {
-    width: 24px;
-    height: 24px;
+.social-icons img {
+  width: 24px;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #333;
+  margin: 4px 0;
+  transition: all 0.3s;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+  }
+
+  .social-icons {
+    display: none;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+  }
+
+  .nav-container.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .social-icons.show {
+    display: flex;
+  }
 }
