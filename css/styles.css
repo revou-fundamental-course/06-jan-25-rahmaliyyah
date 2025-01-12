@@ -2,6 +2,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Navbar Styling */
@@ -11,22 +12,17 @@ body {
   align-items: center;
   padding: 10px 20px;
   background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
   width: 150px;
 }
 
-.nav-container {
-  display: flex;
-  flex-direction: column;
-}
-
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 55px;
   list-style: none;
+  align-items: center;
 }
 
 .nav-links li a {
@@ -34,6 +30,11 @@ body {
   font-weight: 600;
   color: #333;
   transition: color 0.3s;
+
+}
+
+.rightmar {
+  margin-right: 250px;
 }
 
 .nav-links li a:hover {
@@ -65,47 +66,250 @@ body {
   transition: all 0.3s;
 }
 
-/* Responsive Styles */
+/* Sidebar Styling for Mobile */
 @media screen and (max-width: 768px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    list-style: none;
-  }
-
-  .social-icons {
-    display: none;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .nav-container {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px 0;
-  }
-
-  .nav-container.show {
-    display: flex;
+    display: none; /* Hide menu in mobile by default */
   }
 
   .hamburger {
     display: flex;
   }
 
-  .nav-links.show {
+  /* Sidebar container */
+  .nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
     display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transition: right 0.3s ease;
+    z-index: 1000; /* Ensure sidebar appears above other elements */
   }
 
-  .social-icons.show {
-    display: flex;
+  .nav-container.show {
+    right: 0; /* Show sidebar */
   }
+
+  /* Sidebar menu links */
+  .nav-container .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .nav-container .nav-links li a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-container .nav-links li a:hover {
+    color: #8a2be2;
+  }
+
+  /* Sidebar Back Arrow Styling */
+  .back-arrow {
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 32px; /* Ukuran lebih besar untuk panah */
+    font-stretch: expanded;
+    font-family: 'Montserrat', sans-serif;
+    color: #8a2be2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .back-arrow:hover {
+    color: #6c1fb6; /* Efek hover dengan warna lebih gelap */
+  }
+
+  .back-arrow:focus {
+    outline: none; /* Menghilangkan outline saat fokus */
+  }
+}
+
+/* Hide the nav-container by default on desktop */
+@media screen and (min-width: 769px) {
+  .nav-container {
+    display: none;
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f1e4e4;
+  padding: 40px 20px;
+  text-align: center;
+  color: #6f4f98;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1350px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  text-align: left;
+}
+
+.footer-logo img {
+  width: 300px;
+  height: 276px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.footer-nav p {
+  color: #3C096C;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+.footer-nav h3 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  margin: 5px 0;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #6f4f98;
+  font-weight: 600;
+}
+
+.footer-nav ul li a:hover {
+  color: #8a2be2;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-contact h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-contact p {
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-logo, .footer-nav, .footer-contact {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Hero Section Styling */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slider {
+  display: flex;
+  transition: transform 2s inherit;
+  width: 100%; /* 2 slides */
+}
+
+.slide {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  flex: 0 0 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 78%;
+  object-fit: cover;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 20%;
+  left: 5%;
+  color: #fff;
+  text-align: left;
+}
+
+.slide-content h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.slide-content p {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+/* Optional: Add fading effect to content */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.slide-content {
+  animation: fadeIn 1s ease-in-out;
 }
