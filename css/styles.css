@@ -548,3 +548,37 @@ font-size: 38px;
   border-radius: 10px;
   object-fit: cover;
 }
+
+/* Testimonials */
+.testimonials .testimonial-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.testimonial-card {
+  width: 30%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  color: #6f6f6f;
+}
+
+.testimonial-card h3 {
+  font-weight: bold;
+  color: #5f4b8b;
+}
