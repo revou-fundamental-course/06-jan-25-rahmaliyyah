@@ -37,60 +37,71 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Slider Auto-Pagination
-  const slides = document.querySelectorAll('.slide');
-  const slider = document.querySelector('.hero-slider');
-  const pagination = document.createElement('div');
-  pagination.className = 'pagination';
+  const slides = document.querySelectorAll(".slide");
+  const slider = document.querySelector(".hero-slider");
+  const pagination = document.createElement("div");
+  pagination.className = "pagination";
   let currentIndex = 0;
 
   // Tambahkan pagination bullets
   slides.forEach((_, index) => {
-    const bullet = document.createElement('div');
-    bullet.className = 'bullet';
-    if (index === 0) bullet.classList.add('active'); // Bullet pertama aktif
-    bullet.addEventListener('click', () => goToSlide(index));
+    const bullet = document.createElement("div");
+    bullet.className = "bullet";
+    if (index === 0) bullet.classList.add("active"); // Bullet pertama aktif
+    bullet.addEventListener("click", () => goToSlide(index));
     pagination.appendChild(bullet);
   });
 
   // Masukkan pagination ke dalam hero section
-  document.querySelector('#hero').appendChild(pagination);
+  document.querySelector("#hero").appendChild(pagination);
 
-  const bullets = document.querySelectorAll('.bullet');
+  const bullets = document.querySelectorAll(".bullet");
 
   // Fungsi untuk berpindah slide
   function changeSlide() {
-    slides[currentIndex].classList.remove('active');
-    bullets[currentIndex].classList.remove('active');
+    slides[currentIndex].classList.remove("active");
+    bullets[currentIndex].classList.remove("active");
 
     currentIndex = (currentIndex + 1) % slides.length;
 
-    slides[currentIndex].classList.add('active');
-    bullets[currentIndex].classList.add('active');
+    slides[currentIndex].classList.add("active");
+    bullets[currentIndex].classList.add("active");
     slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
   // Fungsi untuk pergi ke slide tertentu
   function goToSlide(index) {
-    slides[currentIndex].classList.remove('active');
-    bullets[currentIndex].classList.remove('active');
+    slides[currentIndex].classList.remove("active");
+    bullets[currentIndex].classList.remove("active");
 
     currentIndex = index;
 
-    slides[currentIndex].classList.add('active');
-    bullets[currentIndex].classList.add('active');
+    slides[currentIndex].classList.add("active");
+    bullets[currentIndex].classList.add("active");
     slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 
   // Set interval untuk auto-slide setiap 5 detik
   setInterval(changeSlide, 5000);
-});
 
-document.querySelector('.discover-more-btn').addEventListener('click', function (event) {
-  event.preventDefault();
-  const target = document.getElementById('why-choose-us');
+  // Prompt Input Nama dan Ganti ID "name"
+  const userName = prompt("What can we call you?", "Enter your name here");
+  if (userName) {
+    const nameElement = document.getElementById("name");
+    const nameElement2 = document.getElementById("name2");
+    nameElement.textContent = userName;
+    nameElement2.textContent = userName;
+  }
+  
+  // Smooth Scroll untuk Discover More Button
+  const discoverBtn = document.querySelector(".btn-discover");
+  discoverBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    const target = document.getElementById("why-choose-us");
 
-  window.scrollTo({
-    top: target.offsetTop,
-    behavior: 'smooth'
+    window.scrollTo({
+      top: target.offsetTop,
+      behavior: "smooth",
+    });
   });
 });
