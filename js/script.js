@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Sidebar / Hamburger Menu
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
 
@@ -34,27 +35,62 @@ document.addEventListener("DOMContentLoaded", function () {
       navContainer.classList.remove("show");
     }
   });
+
+  // Slider Auto-Pagination
+  const slides = document.querySelectorAll('.slide');
+  const slider = document.querySelector('.hero-slider');
+  const pagination = document.createElement('div');
+  pagination.className = 'pagination';
+  let currentIndex = 0;
+
+  // Tambahkan pagination bullets
+  slides.forEach((_, index) => {
+    const bullet = document.createElement('div');
+    bullet.className = 'bullet';
+    if (index === 0) bullet.classList.add('active'); // Bullet pertama aktif
+    bullet.addEventListener('click', () => goToSlide(index));
+    pagination.appendChild(bullet);
+  });
+
+  // Masukkan pagination ke dalam hero section
+  document.querySelector('#hero').appendChild(pagination);
+
+  const bullets = document.querySelectorAll('.bullet');
+
+  // Fungsi untuk berpindah slide
+  function changeSlide() {
+    slides[currentIndex].classList.remove('active');
+    bullets[currentIndex].classList.remove('active');
+
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    slides[currentIndex].classList.add('active');
+    bullets[currentIndex].classList.add('active');
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  // Fungsi untuk pergi ke slide tertentu
+  function goToSlide(index) {
+    slides[currentIndex].classList.remove('active');
+    bullets[currentIndex].classList.remove('active');
+
+    currentIndex = index;
+
+    slides[currentIndex].classList.add('active');
+    bullets[currentIndex].classList.add('active');
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  // Set interval untuk auto-slide setiap 5 detik
+  setInterval(changeSlide, 5000);
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll('.slide');
-  let currentIndex = 0;
-  
-  // Function to change slides
-  function changeSlide() {
-    // Remove the "active" class from the current slide
-    slides[currentIndex].classList.remove('active');
-    
-    // Move to the next slide (or loop back to the first)
-    currentIndex = (currentIndex + 1) % slides.length;
-    
-    // Add the "active" class to the new slide
-    slides[currentIndex].classList.add('active');
-    
-    // Adjust the transform property to show the next slide
-    document.querySelector('.hero-slider').style.transform = `translateX(-${currentIndex * 100}%)`;
-  }
-  
-  // Set interval to auto-change slides every 5 seconds
-  setInterval(changeSlide, 5000);
+document.querySelector('.discover-more-btn').addEventListener('click', function (event) {
+  event.preventDefault();
+  const target = document.getElementById('why-choose-us');
+
+  window.scrollTo({
+    top: target.offsetTop,
+    behavior: 'smooth'
+  });
 });
