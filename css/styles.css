@@ -5,6 +5,10 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Navbar Styling */
 .navbar {
   display: flex;
@@ -12,6 +16,7 @@ body {
   align-items: center;
   padding: 10px 20px;
   background-color: #fff;
+  position: sticky;
 }
 
 .logo img {
@@ -488,4 +493,58 @@ font-size: 38px;
 .logos img {
   width: 80px;
   height: auto;
+}
+
+/* Section for Our Services */
+#our-services {
+  padding: 50px;
+  background-color: #f8f9fa;
+}
+
+#our-services .service-cards {
+  display: flex;
+  gap: 20px;
+}
+
+#our-services .service-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: center;
+}
+
+#our-services .service-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Section for Vision & Mission */
+#vision-mission {
+  padding: 50px;
+  background-color: #e3e4e8;
+}
+
+#vision-mission .vision-mission-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+#vision-mission .vision, #vision-mission .mission {
+  flex: 1;
+}
+
+#vision-mission .vision-images {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#vision-mission .vision-images img {
+  width: 48%;
+  border-radius: 10px;
+  object-fit: cover;
 }
