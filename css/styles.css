@@ -582,3 +582,31 @@ font-size: 38px;
   font-weight: bold;
   color: #5f4b8b;
 }
+
+/* Headquarters */
+.our-headquarters .headquarter-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.headquarter-card {
+  width: 22%;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.headquarter-card img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.headquarter-card h3 {
+  font-size: 1.25rem;
+  color: #5f4b8b;
+  margin-top: 10px;
+}
