@@ -423,3 +423,69 @@ font-size: 38px;
     align-items: center;
   }
 }
+
+.about-us {
+  background-color: #f8f4f7;
+  padding: 60px 20px;
+}
+
+.about-us-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-us-text {
+  flex: 1;
+  color: #333;
+}
+
+.about-us-text h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #8a2be2; /* Purple Color */
+  margin-bottom: 20px;
+}
+
+.about-us-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.quote {
+  font-style: italic;
+  color: #8a2be2;
+}
+
+.about-us-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-us-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.partner-logos {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.partner-logos p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.logos img {
+  width: 80px;
+  height: auto;
+}
