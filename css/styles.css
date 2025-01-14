@@ -2,7 +2,8 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+ 
 }
 
 html {
@@ -377,7 +378,7 @@ font-size: 38px;
 /* Why Choose Us Styling */
 
 .why-choose-us {
-  background-color: #f8f4f7;
+  fill: linear-gradient(180deg, rgba(90, 24, 154, 0.00) 2.05%, rgba(90, 24, 154, 0.25) 87.78%);
   padding: 60px 20px;
   text-align: center;
 }
@@ -480,7 +481,7 @@ font-size: 38px;
 }
 
 .about-us {
-  background-color: #f8f4f7;
+  fill: linear-gradient(180deg, rgba(90, 24, 154, 0.00) 2.05%, rgba(90, 24, 154, 0.25) 87.78%);
   padding: 60px 20px;
 }
 
@@ -502,7 +503,7 @@ font-size: 38px;
   border: none;
   height: 4px;
   background-color: #8a2be2; /* Warna garis */
-  width: 50px; /* Panjang garis */
+  width: 100px; /* Panjang garis */
   margin: 0px 10px; /* Posisi tengah */
 }
 
@@ -576,7 +577,7 @@ font-size: 38px;
 /* Section for Our Services */
 #our-services {
   padding: 50px;
-  background-color: #f8f9fa;
+  background: linear-gradient(180deg, rgba(90, 24, 154, 0.00) 0%, rgba(90, 24, 154, 0.25) 85.73%);
 }
 
 #our-services .service-cards {
@@ -602,35 +603,58 @@ font-size: 38px;
 /* Section for Vision & Mission */
 #vision-mission {
   padding: 50px;
-  background-color: #e3e4e8;
+  background-color: #fff; /* Warna latar belakang putih */
+  font-family: Arial, sans-serif;
 }
 
 #vision-mission .vision-mission-content {
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 #vision-mission .vision, #vision-mission .mission {
-  flex: 1;
+  width: 100%;
 }
 
-#vision-mission .vision-images {
+#vision-mission .vision h3, #vision-mission .mission h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6C2EB9; /* Warna ungu */
+  margin-bottom: 5px;
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  align-items: center;
 }
 
-#vision-mission .vision-images img {
-  width: 48%;
-  border-radius: 10px;
-  object-fit: cover;
+#vision-mission .vision h3::before {
+  content: "";
+  flex-grow: 1;
+  height: 2px;
+  background-color: #6C2EB9;
+  margin-right: 10px;
+}
+
+#vision-mission .mission h3::after {
+  content: "";
+  flex-grow: 1;
+  height: 2px;
+  background-color: #6C2EB9;
+  margin-left: 10px;
+}
+
+#vision-mission p {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.5;
 }
 
 /* Testimonials */
 .testimonials {
   text-align: center;
-  background-color: #fff;
+  background: linear-gradient(180deg, rgba(90, 24, 154, 0.00) 0%, rgba(90, 24, 154, 0.25) 85.73%);
   padding: 60px 0;
 }
 
@@ -695,6 +719,14 @@ font-size: 38px;
   height: 503px;
 }
 
+.underline-2 {
+  border: none;
+  height: 4px;
+  background-color: #FDFDF8; /* Warna garis */
+  width: 100px; /* Panjang garis */
+  margin: 0px 544px; /* Posisi tengah */
+}
+
 .our-headquarters h2 {
 color: #FDFDF8;
 font-family: Montserrat;
@@ -704,6 +736,7 @@ font-weight: 600;
 line-height: normal;
 text-align: center;
 padding-top: 40px;
+margin-top: 0;
 }
 
 .our-headquarters .headquarter-cards {
@@ -733,3 +766,4 @@ padding-top: 40px;
   color: #FDFDF8;
   margin-top: 10px;
 }
+
