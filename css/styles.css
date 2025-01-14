@@ -386,7 +386,7 @@ font-size: 38px;
   font-size: 36px;
   font-weight: bold;
   color: #8a2be2; /* Purple Color */
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .why-choose-us p {
@@ -402,30 +402,80 @@ font-size: 38px;
 }
 
 .card {
-  background-color: #fff;
   padding: 30px;
-  width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 325px;
+  height: 247px;
   text-align: center;
+  border-radius: 20px;
+  background: #FFFAE4;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1); /* Membuat card membesar */
+  box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.3); /* Menambah efek bayangan */
 }
 
 .card-icon {
   font-size: 40px;
   color: #8a2be2;
   margin-bottom: 20px;
+  margin-top: 46px;
+  margin-left: 120px;
+  width: 96px;
+  height: 96px;
 }
 
 .card h3 {
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
+  color: #3C096C;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 297px;
+  margin-left: 14px;
 }
 
 @media (max-width: 768px) {
   .why-choose-us-cards {
     flex-direction: column;
     align-items: center;
+  }
+
+  .card {
+    padding: 30px;
+    width: 245px;
+    height: 167px;
+    text-align: center;
+    border-radius: 20px;
+    background: #FFFAE4;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-icon {
+    font-size: 40px;
+    color: #8a2be2;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-left: 100px;
+    width: 96px;
+    height: 96px;
+  }
+  
+  .card h3 {
+    color: #3C096C;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    width: 297px;
+    margin-left: 1px;
   }
 }
 
@@ -437,31 +487,56 @@ font-size: 38px;
 .about-us-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   gap: 40px;
 }
 
 .about-us-text {
   flex: 1;
   color: #333;
+  padding-top: 20px;
+  
 }
 
+.underline {
+  border: none;
+  height: 4px;
+  background-color: #8a2be2; /* Warna garis */
+  width: 50px; /* Panjang garis */
+  margin: 0px 10px; /* Posisi tengah */
+}
+
+
 .about-us-text h2 {
-  font-size: 36px;
   font-weight: bold;
-  color: #8a2be2; /* Purple Color */
-  margin-bottom: 20px;
+  color: #3C096C;
+  margin-bottom: 4px;
+  font-size: 25px;
+}
+
+.about-us-text h1 {
+  width: 557px;
+  font-size: 40px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  line-height: 40px; /* 100% */
+  color: #000;
+
+  
 }
 
 .about-us-text p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.6;
   margin-bottom: 15px;
+
+  
 }
 
 .quote {
   font-style: italic;
   color: #8a2be2;
+  font-size: 20px;
 }
 
 .about-us-image {
@@ -471,7 +546,10 @@ font-size: 38px;
 
 .about-us-image img {
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
+  background: url("assets/image/about-us.svg") lightgray 50% / cover no-repeat;
+  height: 563px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .partner-logos {
@@ -550,19 +628,40 @@ font-size: 38px;
 }
 
 /* Testimonials */
+.testimonials {
+  text-align: center;
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  color: #5f4b8b;
+  margin-bottom: 30px;
+}
+
 .testimonials .testimonial-cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   gap: 30px;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .testimonial-card {
-  width: 30%;
-  background-color: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
+  opacity: 0.7;
+  transform: scale(0.8);
+  transition: opacity 0.5s, transform 0.5s;
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 .testimonial-card img {
@@ -576,6 +675,7 @@ font-size: 38px;
 .testimonial-card p {
   font-style: italic;
   color: #6f6f6f;
+  margin-bottom: 15px;
 }
 
 .testimonial-card h3 {
@@ -583,7 +683,16 @@ font-size: 38px;
   color: #5f4b8b;
 }
 
+/* Kartu di tengah diperbesar */
+.testimonial-cards .testimonial-card:nth-child(2) {
+  transform: scale(1);
+  opacity: 1;
+}
+
 /* Headquarters */
+.our-headquarters {
+  background: #3C096C;
+}
 .our-headquarters .headquarter-cards {
   display: flex;
   justify-content: space-around;
@@ -593,10 +702,9 @@ font-size: 38px;
 .headquarter-card {
   width: 22%;
   text-align: center;
-  background-color: white;
+  background: #3C096C;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .headquarter-card img {

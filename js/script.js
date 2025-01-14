@@ -104,4 +104,31 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   });
+
+  // Efek Timbul pada Card saat Scroll (Mobile)
+  const cards = document.querySelectorAll(".card");
+
+  const handleScroll = () => {
+    cards.forEach((card) => {
+      const cardTop = card.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (cardTop < windowHeight - 100) {
+        card.classList.add("show");
+      } else {
+        card.classList.remove("show");
+      }
+    });
+  };
+
+  // Jalankan saat halaman di-scroll
+  window.addEventListener("scroll", handleScroll);
+
+  // Jalankan saat halaman pertama kali dimuat
+  handleScroll();
+
+  // Tambahkan kelas CSS show pada card saat muncul di viewport
+  cards.forEach((card) => {
+    card.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+  });
 });
