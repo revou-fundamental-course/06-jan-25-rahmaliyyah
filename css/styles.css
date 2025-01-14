@@ -692,29 +692,44 @@ font-size: 38px;
 /* Headquarters */
 .our-headquarters {
   background: #3C096C;
+  height: 503px;
 }
+
+.our-headquarters h2 {
+color: #FDFDF8;
+font-family: Montserrat;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-align: center;
+padding-top: 40px;
+}
+
 .our-headquarters .headquarter-cards {
   display: flex;
-  justify-content: space-around;
-  gap: 30px;
+  justify-content: center;
+  gap: 0px;
 }
 
 .headquarter-card {
-  width: 22%;
+  width: 20%;
   text-align: center;
   background: #3C096C;
-  padding: 20px;
+  padding: 0px;
+  padding-top: 40px;
   border-radius: 15px;
 }
 
 .headquarter-card img {
-  width: 100%;
   border-radius: 10px;
   object-fit: cover;
+  width: 224px;
+  height: 224px;
 }
 
 .headquarter-card h3 {
   font-size: 1.25rem;
-  color: #5f4b8b;
+  color: #FDFDF8;
   margin-top: 10px;
 }
