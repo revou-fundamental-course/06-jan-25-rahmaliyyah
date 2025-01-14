@@ -14,7 +14,7 @@
     <!-- Logo & Navbar -->
     <header>
       <nav class="navbar">
-        <div class="logo">
+        <div class="logo" id = "logo">
           <img src="assets/icon/Logo.svg" alt="RubyFlame Logo" />
         </div>
         <div class="hamburger" id="hamburger">
@@ -137,13 +137,13 @@
     </div>
     <!-- Card for Home Renovation & Styling -->
     <div class="service-card">
-      <img src="assets/icon/service2.svg" alt="Home Renovation & Styling">
+      <img src="assets/icon/service2rev.svg" alt="Home Renovation & Styling">
       <h3>Home Renovation & Styling</h3>
       <p>Send us a message and we'll help create the perfect living space for you.</p>
     </div>
     <!-- Card for Commercial Space Revamp -->
     <div class="service-card">
-      <img src="assets/icon/service3.svg" alt="Commercial Space Revamp">
+      <img src="assets/icon/service3rev.svg" alt="Commercial Space Revamp">
       <h3>Commercial Space Revamp</h3>
       <p>Elevate your business environment with designs that inspire productivity.</p>
     </div>
@@ -218,6 +218,43 @@
   </div>
 </section>
 
+<section id="contact-us">
+  <h1>Contact Us</h1>
+  <div class="contact-container">
+    <div class="contact-form">
+      <h2>Send us a message</h2>
+      <p>Do you have a question? A complaint? Or need any help?</p>
+      <form id="message-form">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" placeholder="Full Name" required>
+
+        <label for="birth-date">Birth Date</label>
+        <input type="date" id="birth-date" name="birth-date" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="" disabled selected>Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Enter Message Here" rows="5" required></textarea>
+
+        <button type="submit">Send a Message!</button>
+      </form>
+    </div>
+    <div class="submitted-message">
+      <h2>Submitted Message</h2>
+      <div id="submitted-content"></div>
+    </div>
+  </div>
+</section>
+
     </main>
     
 
@@ -230,7 +267,7 @@
         <div class="footer-nav">
           <h3>Navigation</h3>
           <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="#logo">Home</a></li>
             <li><a href="#about-us">About Us</a></li>
             <li><a href="#our-services">Services</a></li>
             <li><a href="#testimonials">Testimonials</a></li>

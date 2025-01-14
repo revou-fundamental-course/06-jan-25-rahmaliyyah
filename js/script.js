@@ -132,3 +132,26 @@ document.addEventListener("DOMContentLoaded", function () {
     card.style.transition = "transform 0.5s ease, opacity 0.5s ease";
   });
 });
+
+document.getElementById("message-form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const fullName = document.getElementById("full-name").value;
+  const birthDate = document.getElementById("birth-date").value;
+  const email = document.getElementById("email").value;
+  const gender = document.getElementById("gender").value;
+  const message = document.getElementById("message").value;
+
+  const submittedContent = `
+    <p><strong>Full Name:</strong> ${fullName}</p>
+    <p><strong>Birth Date:</strong> ${birthDate}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Gender:</strong> ${gender}</p>
+    <p><strong>Message:</strong> ${message}</p>
+  `;
+
+  document.getElementById("submitted-content").innerHTML = submittedContent;
+
+  // Clear form fields
+  document.getElementById("message-form").reset();
+});
