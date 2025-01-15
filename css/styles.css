@@ -155,6 +155,86 @@ html {
   }
 }
 
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .nav-links {
+    display: none; /* Hide menu in mobile by default */
+  }
+
+  .rightmar {
+    margin-right: 0px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Sidebar container */
+  .nav-container {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transition: right 0.3s ease;
+    z-index: 1000; /* Ensure sidebar appears above other elements */
+  }
+
+  .nav-container.show {
+    right: 0; /* Show sidebar */
+  }
+
+  /* Sidebar menu links */
+  .nav-container .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 20px;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .nav-container .nav-links li a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-container .nav-links li a:hover {
+    color: #8a2be2;
+  }
+
+  /* Sidebar Back Arrow Styling */
+  .back-arrow {
+    align-self: flex-start;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-size: 32px; /* Ukuran lebih besar untuk panah */
+    font-stretch: expanded;
+    font-family: 'Montserrat', sans-serif;
+    color: #8a2be2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .back-arrow:hover {
+    color: #6c1fb6; /* Efek hover dengan warna lebih gelap */
+  }
+
+  .back-arrow:focus {
+    outline: none; /* Menghilangkan outline saat fokus */
+  }
+}
+
+
 /* Footer Styles */
 footer {
   background-color: #3C096C;
@@ -398,6 +478,24 @@ font-size: 38px;
 
 .pagination .bullet.active {
   background-color: #8a2be2;
+}
+
+@media (max-width: 768px) {
+.slide-content {
+  margin-top: 80px ;
+}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .slide-content {
+    margin-top: 80px ;
+    
+  }
+.slide-content h1 p {
+padding: 2%;
+}
+
 }
 
 /* Why Choose Us Styling */
