@@ -619,7 +619,7 @@ font-size: 38px;
 }
 
 #vision-mission .vision h3, #vision-mission .mission h3 {
-  font-size: 18px;
+  font-size: 50px;
   font-weight: bold;
   color: #6C2EB9; /* Warna ungu */
   margin-bottom: 5px;
@@ -643,13 +643,32 @@ font-size: 38px;
   margin-left: 10px;
 }
 
-#vision-mission p {
-  font-size: 20px;
-  font-weight: 500;
-  color: #333;
+#vision-mission .vision p {
+  width: 300px;
+  font-size: 30px;
+  font-weight: 600;
+  color:#000;
   margin-top: 10px;
   line-height: 1.5;
+  text-align: left;
+  margin-left: 0px;
+  margin-top: 40px;
 }
+
+#vision-mission .mission p {
+  width: 380px;
+  font-size: 30px;
+  font-weight: 600;
+  color:#000;
+  margin-top: 10px;
+  line-height: 1.5;
+  text-align: right;
+  margin-right: 0px;
+  margin-left: 70%;
+  margin-top: 40px;
+}
+
+
 
 /* Testimonials */
 .testimonials {
