@@ -1254,6 +1254,82 @@ margin-top: 0;
   margin-top: 10px;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .our-headquarters {
+    height: auto; /* Agar tinggi section mengikuti konten */
+    padding: 30px 0;
+  }
+
+  .underline-2 {
+    margin: 0 auto;
+    width: 80px;
+    margin-bottom: 20px;
+  }
+
+  .our-headquarters h2 {
+    font-size: 28px;
+    padding-top: 20px;
+  }
+
+  .our-headquarters .headquarter-cards {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .headquarter-card {
+    width: 45%; /* Dua kartu dalam satu baris */
+    padding: 20px 0;
+  }
+
+  .headquarter-card img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .headquarter-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-headquarters {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .underline-2 {
+    margin: 0 auto;
+    width: 60px;
+    margin-bottom: 15px;
+  }
+
+  .our-headquarters h2 {
+    font-size: 24px;
+    padding-top: 15px;
+  }
+
+  .our-headquarters .headquarter-cards {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .headquarter-card {
+    width: 90%; /* Satu kartu per baris */
+    padding: 15px 0;
+  }
+
+  .headquarter-card img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .headquarter-card h3 {
+    font-size: 1rem;
+  }
+}
+
+
 /* Contact Us */
 #contact-us {
   padding: 40px;
